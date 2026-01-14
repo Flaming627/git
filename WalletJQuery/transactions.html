@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <h3>Últimos Movimientos</h3>
+    <div class="mb-3">
+        <label>Filtrar por tipo:</label>
+        <select id="filter-type" class="form-select">
+            <option value="todos">Todos</option>
+            <option value="deposito">Depósitos</option>
+            <option value="transferencia">Transferencias</option>
+        </select>
+    </div>
+
+    <ul id="list-transactions" class="list-group">
+        </ul>
+    <a href="menu.html" class="btn btn-link mt-3">Volver al menú</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    const listaTransacciones = [
+        { id: 1, monto: 500, tipo: 'deposito', fecha: '2024-05-01' },
+        { id: 2, monto: 200, tipo: 'transferencia', fecha: '2024-05-02' },
+        { id: 3, monto: 1000, tipo: 'deposito', fecha: '2024-05-03' }
+    ];
+
+    function mostrarUltimosMovimientos(filtro) {
+        let html = '';
+        const filtrados = filtro === 'todos' ? listaTransacciones : listaTransacciones.filter(t => t.tipo === filtro);
+        
+        filtrados.forEach(t => {
+            html += `<li class="list-group-item">
+                <strong>${t.tipo.toUpperCase()}</strong> - $${t.monto} <span class="float-end">${t.fecha}</span>
+            </li>`;
+        });
+        $('#list-transactions').html(html);
+    }
+
+    $(document).ready(function() {
+        mostrarUltimosMovimientos('todos');
+        $('#filter-type').change(function() {
+            mostrarUltimosMovimientos($(this).val());
+        });
+    });
+</script>

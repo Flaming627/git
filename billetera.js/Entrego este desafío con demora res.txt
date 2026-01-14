@@ -1,0 +1,1 @@
+Entrego este desafío con demora respecto al plazo. La incorporación de interactividad con JavaScript y la sincronización entre pantallas me llevó más tiempo del previsto. Dejo la implementación funcional según la consigna. Gracias.

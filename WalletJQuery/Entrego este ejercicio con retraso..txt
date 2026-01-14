@@ -1,0 +1,1 @@
+Entrego este ejercicio con retraso. La adaptación del proyecto al uso de jQuery, junto con la integración de Bootstrap y el manejo de estado con Local Storage, me llevó más tiempo del estimado. La funcionalidad solicitada fue implementada según la consigna. Gracias.
